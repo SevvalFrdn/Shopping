@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Shopping.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+
+@*     <div class="img mb-4">
+
+                    @Html.DisplayNameFor(model => model.Photo)
+
+            </div>
+            <div class="info text-center">
+
+            <h3>
+
+                @Html.DisplayNameFor(model => model.ProductName)
+
+
+          </h3>
+            <span class="position">
+
+                @Html.DisplayNameFor(model => model.ProductCode)
+
+            </span>
+            <span class="position">
+
+                @Html.DisplayNameFor(model => model.ProductPrice)
+
+            </span>
+            <div class="text">
+
+                @Html.DisplayNameFor(model => model.ProductDescription)
+
+            </div>
+            </div>
+*@
+
+
+<div class="col-lg-3 d-flex mb-sm-4 ftco-animate">
+    <div class="staff">
+     
+                @foreach (var item in Model)
+                {
+
+                    <div class="img mb-4">
+
+                        @Html.DisplayFor(modelItem => item.Photo)
+
+                    </div>
+                    <div class="info text-center">
+                        <h3>
+
+                            @Html.DisplayFor(modelItem => item.ProductName)
+
+                        </h3>
+                        <span class="position">
+
+                            @Html.DisplayFor(modelItem => item.ProductCode)
+
+                        </span>
+                        <span class="position" style="color:black">
+
+                            @Html.DisplayFor(modelItem => item.ProductPrice)
+
+                        </span>
+
+                        <div class="text">
+
+
+
+                            @Html.DisplayFor(modelItem => item.ProductDescription)
+
+                        </div>
+                    </div>
+
+            <button type="button" style="background-color:dimgrey;color:white;width:100%;">Sepete Ekle</button>
+
+                }
+         
+    </div>
+</div>
+
+

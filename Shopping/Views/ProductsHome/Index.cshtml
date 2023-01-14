@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Shopping.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutProductsHome.cshtml";
+}
+
+
+@*    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>*@
+
+@foreach (var item in Model)
+{
+
+    <a href="blog-single.html" class="block-20">
+        @Html.DisplayFor(modelItem => item.Photo)
+
+    </a>
+
+    <div class="text py-4 d-block">
+        <div class="meta">
+            <div> @Html.DisplayFor(modelItem => item.ProductName)</div>
+            <div>    @Html.DisplayFor(modelItem => item.ProductCode)</div>
+
+        </div>
+
+
+
+        <h3 class="heading mt-2">
+                @Html.DisplayFor(modelItem => item.ProductPrice) TL
+        </h3>
+        <p>
+            @Html.DisplayFor(modelItem => item.ProductDescription)
+
+        </p>
+    </div>
+              <button type="button" style="background-color:dimgrey;color:white;width:100%;">Sepete Ekle</button>
+
+}
+
+
